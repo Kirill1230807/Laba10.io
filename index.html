@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Пошук друзів</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="authContainer" class="container">
+    <div class="tabs">
+        <button class="tab-button active" data-tab="login">Авторизація</button>
+        <button class="tab-button" data-tab="register">Реєстрація</button>
+    </div>
+    <div id="login" class="tab-content active">
+        <h2>Авторизація</h2>
+        <form id="loginForm">
+            <div class="form-group"><label>Username:</label><input type="text" id="loginUsername" required /></div>
+            <div class="form-group"><label>Password:</label><input type="password" id="loginPassword" required /></div>
+            <button type="submit">Увійти</button>
+        </form>
+    </div>
+    <div id="register" class="tab-content">
+        <h2>Реєстрація</h2>
+        <form id="registerForm">
+            <div class="form-group"><label>Username:</label><input type="text" id="registerUsername" required /></div>
+            <div class="form-group"><label>Password:</label><input type="password" id="registerPassword" required /></div>
+            <button type="submit">Зареєструватися</button>
+        </form>
+    </div>
+</div>
+
+<div id="mainApp" class="main-app hidden">
+    <div class="header">
+        <h1>Пошук друзів</h1>
+        <button id="logoutBtn">Вийти</button>
+    </div>
+    <div class="controls">
+        <input type="text" id="searchInput" placeholder="Пошук за ім'ям..." />
+        <select id="sortSelect">
+            <option value="">Сортувати</option>
+            <option value="name-asc">Ім'я A-Z</option>
+            <option value="name-desc">Ім'я Z-A</option>
+            <option value="age-asc">Вік ↑</option>
+            <option value="age-desc">Вік ↓</option>
+        </select>
+    </div>
+    <div class="filters">
+        <input type="number" id="ageMin" placeholder="Мін вік" />
+        <input type="number" id="ageMax" placeholder="Макс вік" />
+        <button id="applyFilters">Фільтрувати</button>
+    </div>
+    <div id="usersContainer" class="users"></div>
+    <div id="pagination" class="pagination"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
